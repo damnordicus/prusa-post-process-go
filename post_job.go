@@ -4,18 +4,47 @@ import (
 	"bufio"
 	"bytes"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"log"
+	"math"
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
 type FilamentPayload struct {
-	Filename     string `json:"filename"`
+	Filename     string    `json:"filename"`
 	FilamentUsed []float64 `json:"filament_used"`
-	PrinterModel string `json:"printer_model"`
+	PrinterModel string    `json:"printer_model"`
+}
+
+func strToFloat(s string) (float64, error) {
+	f, err := strconv.ParseFloat(strings.TrimSpace(s), 64)
+	if err != nil {
+		log.Printf("Filament used extraction failed, %v\n", err)
+		return math.NaN(), err
+	}
+
+	f = math.Round(f*100) / 100
+
+	return f, nil
+}
+
+func trimQuotes(s string) string {
+	return strings.TrimSpace(strings.Trim(s, `"`))
+}
+
+func splitPrefix(s string) (string, error) {
+	parts := strings.Split(strings.TrimSpace(s), "=")
+
+	if len(parts) != 2 {
+		return "", errors.New("invalid prefix")
+	}
+
+	return strings.TrimSpace(parts[1]), nil
 }
 
 func main() {
@@ -25,8 +54,9 @@ func main() {
 	}
 
 	rawFile := os.Args[1]
-	logFile := "C:\\Users\\PhoenixSpark\\Documents\\post_job.log" // Adjust for Windows path later
-
+	//logFile := "C:\\Users\\PhoenixSpark\\Documents\\post_job.log" // Adjust for Windows path later
+	logDir, _ := os.Getwd()
+	logFile := logDir + "/logs"
 	logOutput, err := os.OpenFile(logFile, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Println("Failed to open log file:", err)
@@ -49,9 +79,9 @@ func main() {
 	}
 	defer file.Close()
 
-	var filamentUsed []float64
+	filamentUsed := make([]float64, 0, 5)
 	var printerModel string
-	newUsed := "should never happen"
+
 	scanner := bufio.NewScanner(file)
 
 	// Regex for matching "filament.*used" and extracting numeric values
@@ -59,34 +89,52 @@ func main() {
 	for scanner.Scan() {
 		line := scanner.Text()
 		lower := strings.ToLower(line)
-		if strings.Contains(lower, "filament") && strings.Contains(lower, "used") {
-			if strings.Contains(lower, "filament used [g]") {
-				parts := strings.Split(line, "=")
-				if len(parts) == 2 {
-					if strings.Contains(parts[1], ","){
-						weights := strings.Split(parts[1], ",")
-						strings
-					}else{
-						// filamentUsed = strings.TrimSpace(parts[1])
-						append(filamentUsed, strings.TrimSpace(parts[1]))
-					}
-				}
-			} 
+
+		// figure out bgcode vs gcode
+		if lower[:1] == ";" {
+			// if gcode remove ;
+			lower = lower[2:]
 		}
-		if strings.Contains(lower, "printer") && strings.Contains(lower, "model") {
-			if strings.Contains(lower, "; printer_model") {
-				parts := strings.Split(line, "=")
-				if len(parts) == 2 {
-					printerModel = strings.TrimSpace(parts[1])
-				}
-			} else if strings.Contains(lower, "printer_model=") {
-				parts := strings.Split(line, "=")
-				if len(parts) == 2 {
-					printerModel = strings.TrimSpace(parts[1])
-				}
+		//fmt.Println(lower)
+		if strings.HasPrefix(lower, "filament used [g]") {
+			// check prefix for `filament used [g]`
+			weightsStr, err := splitPrefix(lower)
+			if err != nil {
+				log.Println("Error parsing filament used [g]:", err)
+				return
 			}
-		}		
-		if filamentUsed != "" && printerModel != "" {
+
+			if strings.Contains(weightsStr, ",") {
+				weights := strings.Split(trimQuotes(weightsStr), ",")
+				for _, weight := range weights {
+					f, err := strToFloat(weight)
+					if err != nil {
+						log.Printf("Filament used extraction failed, %v\n", err)
+						return
+					}
+					filamentUsed = append(filamentUsed, f)
+				}
+			} else {
+				weight := trimQuotes(weightsStr)
+
+				f, err := strToFloat(weight)
+				if err != nil {
+					log.Printf("Filament used extraction failed, %v\n", err)
+					return
+				}
+				filamentUsed = append(filamentUsed, f)
+			}
+		}
+
+		if strings.HasPrefix(lower, "printer_model") {
+			printerModel, err = splitPrefix(lower)
+			if err != nil {
+				log.Printf("Filament used extraction failed, %v\n", err)
+			}
+			printerModel = strings.ToUpper(printerModel)
+		}
+
+		if len(filamentUsed) > 0 && printerModel != "" {
 			break
 		}
 	}
@@ -95,10 +143,10 @@ func main() {
 		log.Println("Filament used extraction failed")
 		return
 	}
-
 	log.Println("Filament used:", filamentUsed)
 	log.Println("Printer model:", printerModel)
-	log.Println("New used:", newUsed)
+	//fmt.Printf("Filament used: %v\n", filamentUsed)
+	//fmt.Printf("Printer model: %v\n", printerModel)
 
 	// Build JSON
 	payload := FilamentPayload{
@@ -106,7 +154,7 @@ func main() {
 		FilamentUsed: filamentUsed,
 		PrinterModel: printerModel,
 	}
-	
+
 	jsonData, err := json.Marshal(payload)
 	if err != nil {
 		log.Println("Error creating JSON:", err)
