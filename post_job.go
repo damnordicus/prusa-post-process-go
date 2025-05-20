@@ -14,7 +14,7 @@ import (
 
 type FilamentPayload struct {
 	Filename     string `json:"filename"`
-	FilamentUsed string `json:"filament_used"`
+	FilamentUsed []float64 `json:"filament_used"`
 	PrinterModel string `json:"printer_model"`
 }
 
@@ -49,7 +49,7 @@ func main() {
 	}
 	defer file.Close()
 
-	var filamentUsed string
+	var filamentUsed []float64
 	var printerModel string
 	newUsed := "should never happen"
 	scanner := bufio.NewScanner(file)
@@ -63,7 +63,13 @@ func main() {
 			if strings.Contains(lower, "filament used [g]") {
 				parts := strings.Split(line, "=")
 				if len(parts) == 2 {
-					filamentUsed = strings.TrimSpace(parts[1])
+					if strings.Contains(parts[1], ","){
+						weights := strings.Split(parts[1], ",")
+						strings
+					}else{
+						// filamentUsed = strings.TrimSpace(parts[1])
+						append(filamentUsed, strings.TrimSpace(parts[1]))
+					}
 				}
 			} 
 		}
