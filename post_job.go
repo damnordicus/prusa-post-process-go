@@ -54,9 +54,9 @@ func main() {
 	}
 
 	rawFile := os.Args[1]
-	//logFile := "C:\\Users\\PhoenixSpark\\Documents\\post_job.log" // Adjust for Windows path later
-	logDir, _ := os.Getwd()
-	logFile := logDir + "/logs"
+	logFile := "C:\\Users\\PhoenixSpark\\Documents\\post_job.log" // Adjust for Windows path later
+	//logDir, _ := os.Getwd()
+	//logFile = logDir + "/logs"
 	logOutput, err := os.OpenFile(logFile, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		fmt.Println("Failed to open log file:", err)
@@ -88,6 +88,10 @@ func main() {
 	//re := regexp.MustCompile("[0-9.]+")
 	for scanner.Scan() {
 		line := scanner.Text()
+		
+		if line == "" || line == ";" {
+			continue
+		}
 		lower := strings.ToLower(line)
 
 		// figure out bgcode vs gcode
