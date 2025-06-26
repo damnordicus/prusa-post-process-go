@@ -193,7 +193,7 @@ func main() {
 	log.Println(string(jsonData))
 
 	// POST request
-	resp, err := http.Post("https://10.0.30.204:5173/api/pendingJob", "application/json", bytes.NewBuffer(jsonData))
+	resp, err := http.Post("https://filmanager.apps.travisspark.com/api/pendingJob", "application/json", bytes.NewBuffer(jsonData))
 	if err != nil {
 		log.Println("Error sending POST:", err)
 		return
