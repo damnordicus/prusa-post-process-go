@@ -19,6 +19,7 @@ type FilamentPayload struct {
 	Filename     string    `json:"filename"`
 	FilamentUsed []float64 `json:"filament_used"`
 	PrinterModel string    `json:"printer_model"`
+	ExtruderColor []string `json:"extruder_colour"`
 }
 
 func strToFloat(s string) (float64, error) {
@@ -80,6 +81,7 @@ func main() {
 	defer file.Close()
 
 	filamentUsed := make([]float64, 0, 5)
+	extruderColor := make([]string, 0, 5)
 	var printerModel string
 
 	scanner := bufio.NewScanner(file)
@@ -138,7 +140,30 @@ func main() {
 			printerModel = strings.ToUpper(printerModel)
 		}
 
-		if len(filamentUsed) > 0 && printerModel != "" {
+		if strings.HasPrefix(lower, "extruder_colour") {
+			colorStr, err := splitPrefix(lower)  // Get the string first
+			if err != nil {
+				log.Printf("Extruder Color extraction failed, %v\n", err)
+				continue  // Use continue instead of return
+			}
+			
+			colorStr = trimQuotes(colorStr)
+			log.Println("colord:", colorStr)
+			if strings.Contains(colorStr, ",") {
+				colors := strings.Split(colorStr, ",")
+				extruderColor = make([]string, 0, len(colors))  // Reset the slice
+				for _, color := range colors {
+					trimmedColor := strings.TrimSpace(color)
+					if trimmedColor != "" {
+						extruderColor = append(extruderColor, strings.TrimSpace(color))
+					}
+				}
+			} else {
+				extruderColor = []string{strings.TrimSpace(colorStr)}  // Create slice with single element
+			}
+		}
+
+		if len(filamentUsed) > 0 && printerModel != "" && len(extruderColor) > 0 {
 			break
 		}
 	}
@@ -157,6 +182,7 @@ func main() {
 		Filename:     outputFilename,
 		FilamentUsed: filamentUsed,
 		PrinterModel: printerModel,
+		ExtruderColor: extruderColor,
 	}
 
 	jsonData, err := json.Marshal(payload)
@@ -167,7 +193,7 @@ func main() {
 	log.Println(string(jsonData))
 
 	// POST request
-	resp, err := http.Post("https://filmanager.apps.travisspark.com/api/pendingJob", "application/json", bytes.NewBuffer(jsonData))
+	resp, err := http.Post("https://10.0.30.204:5173/api/pendingJob", "application/json", bytes.NewBuffer(jsonData))
 	if err != nil {
 		log.Println("Error sending POST:", err)
 		return

@@ -1,0 +1,29 @@
+2025/06/26 12:53:30 Reading Temp file
+2025/06/26 12:53:30 Output file: .
+2025/06/26 12:53:30 filament used [g]=2.00, 1.00, 0.00, 0.00, 0.00
+2025/06/26 12:53:30 line:  filament used [g]=2.00, 1.00, 0.00, 0.00, 0.00
+2025/06/26 12:53:30 printer_model=xl5
+2025/06/26 12:53:30 line:  printer_model=XL5
+2025/06/26 12:53:30 Filament used: [2 1 0 0 0]
+2025/06/26 12:53:30 Printer model: XL5
+2025/06/26 12:53:30 {"filename":".","filament_used":[2,1,0,0,0],"printer_model":"XL5","extruder_colour":[]}
+2025/06/26 12:53:30 Error sending POST: Post "https://10.0.30.204:5173/api/pendingJob": dial tcp 10.0.30.204:5173: connect: connection refused
+2025/06/26 12:56:19 Reading Temp file
+2025/06/26 12:56:19 Output file: .
+2025/06/26 12:56:19 filament used [g]=2.00, 1.00, 0.00, 0.00, 0.00
+2025/06/26 12:56:19 line:  filament used [g]=2.00, 1.00, 0.00, 0.00, 0.00
+2025/06/26 12:56:19 printer_model=xl5
+2025/06/26 12:56:19 line:  printer_model=XL5
+2025/06/26 12:56:19 colord: #0000ff, #ff0000, #f0f0f0, #2351f2, #000000
+2025/06/26 12:56:19 line:  extruder_colour=#0000ff, #ff0000, #f0f0f0, #2351f2, #000000
+2025/06/26 12:56:19 Filament used: [2 1 0 0 0]
+2025/06/26 12:56:19 Printer model: XL5
+2025/06/26 12:56:19 {"filename":".","filament_used":[2,1,0,0,0],"printer_model":"XL5","extruder_colour":["#0000ff","#ff0000","#f0f0f0","#2351f2","#000000"]}
+2025/06/26 12:56:19 Error sending POST: Post "https://10.0.30.204:5173/api/pendingJob": dial tcp 10.0.30.204:5173: connect: connection refused
+2025/06/26 12:56:52 Reading Temp file
+2025/06/26 12:56:52 Output file: .
+2025/06/26 12:56:52 colord: #0000ff, #ff0000, #f0f0f0, #2351f2, #000000
+2025/06/26 12:56:52 Filament used: [2 1 0 0 0]
+2025/06/26 12:56:52 Printer model: XL5
+2025/06/26 12:56:52 {"filename":".","filament_used":[2,1,0,0,0],"printer_model":"XL5","extruder_colour":["#0000ff","#ff0000","#f0f0f0","#2351f2","#000000"]}
+2025/06/26 12:56:52 Error sending POST: Post "https://10.0.30.204:5173/api/pendingJob": dial tcp 10.0.30.204:5173: connect: connection refused
