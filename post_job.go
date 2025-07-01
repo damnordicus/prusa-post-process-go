@@ -141,25 +141,18 @@ func main() {
 		}
 
 		if strings.HasPrefix(lower, "extruder_colour") {
-			colorStr, err := splitPrefix(lower)  // Get the string first
+			colorStr, err := splitPrefix(lower) // Get the string first
 			if err != nil {
 				log.Printf("Extruder Color extraction failed, %v\n", err)
-				continue  // Use continue instead of return
+				continue // Use continue instead of return
 			}
-			
 			colorStr = trimQuotes(colorStr)
-			log.Println("colord:", colorStr)
-			if strings.Contains(colorStr, ",") {
-				colors := strings.Split(colorStr, ",")
-				extruderColor = make([]string, 0, len(colors))  // Reset the slice
-				for _, color := range colors {
-					trimmedColor := strings.TrimSpace(color)
-					if trimmedColor != "" {
-						extruderColor = append(extruderColor, strings.TrimSpace(color))
-					}
-				}
-			} else {
-				extruderColor = []string{strings.TrimSpace(colorStr)}  // Create slice with single element
+			log.Println("color:", colorStr)
+			
+			// Each extruder_colour_# contains a single color string
+			trimmedColor := strings.TrimSpace(colorStr)
+			if trimmedColor != "" {
+				extruderColor = append(extruderColor, trimmedColor)
 			}
 		}
 
