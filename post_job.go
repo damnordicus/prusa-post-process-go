@@ -81,7 +81,7 @@ func main() {
 	defer file.Close()
 
 	filamentUsed := make([]float64, 0, 5)
-	extruderColorMap := make(map[int]string) // Use map to collect indexed colors
+	extruderColor := make([]string, 0, 5)
 	var printerModel string
 
 	scanner := bufio.NewScanner(file)
@@ -135,65 +135,36 @@ func main() {
 		if strings.HasPrefix(lower, "printer_model") {
 			printerModel, err = splitPrefix(lower)
 			if err != nil {
-				log.Printf("Printer model extraction failed, %v\n", err)
+				log.Printf("Filament used extraction failed, %v\n", err)
 			}
 			printerModel = strings.ToUpper(printerModel)
 		}
 
-		// Handle indexed extruder colors: EXTRUDER_COLOUR_0, EXTRUDER_COLOUR_1, etc.
-		if strings.HasPrefix(lower, "extruder_colour_") {
-			// Extract the index and color value
-			parts := strings.SplitN(lower, "=", 2)
-			if len(parts) != 2 {
-				log.Printf("Invalid extruder color format: %s\n", line)
-				continue
-			}
-			
-			// Get the index from "extruder_colour_X"
-			indexPart := strings.TrimPrefix(parts[0], "extruder_colour_")
-			indexPart = strings.TrimSpace(indexPart)
-			
-			index, err := strconv.Atoi(indexPart)
+		if strings.HasPrefix(lower, "extruder_colour") {
+			colorStr, err := splitPrefix(lower)  // Get the string first
 			if err != nil {
-				log.Printf("Invalid extruder color index: %s\n", indexPart)
-				continue
+				log.Printf("Extruder Color extraction failed, %v\n", err)
+				continue  // Use continue instead of return
 			}
 			
-			colorStr := trimQuotes(parts[1])
-			colorStr = strings.TrimSpace(colorStr)
-			
-			if colorStr != "" {
-				extruderColorMap[index] = colorStr
-				log.Printf("Found extruder color %d: %s\n", index, colorStr)
+			colorStr = trimQuotes(colorStr)
+			log.Println("colord:", colorStr)
+			if strings.Contains(colorStr, ",") {
+				colors := strings.Split(colorStr, ",")
+				extruderColor = make([]string, 0, len(colors))  // Reset the slice
+				for _, color := range colors {
+					trimmedColor := strings.TrimSpace(color)
+					if trimmedColor != "" {
+						extruderColor = append(extruderColor, strings.TrimSpace(color))
+					}
+				}
+			} else {
+				extruderColor = []string{strings.TrimSpace(colorStr)}  // Create slice with single element
 			}
 		}
 
-		// Check if we have enough data to break early
-		if len(filamentUsed) > 0 && printerModel != "" && len(extruderColorMap) > 0 {
-			// Continue scanning to get all extruder colors, but we could break here if performance is critical
-		}
-	}
-
-	// Convert map to ordered slice
-	extruderColor := make([]string, 0, len(extruderColorMap))
-	if len(extruderColorMap) > 0 {
-		// Find the maximum index to determine array size
-		maxIndex := -1
-		for index := range extruderColorMap {
-			if index > maxIndex {
-				maxIndex = index
-			}
-		}
-		
-		// Create slice with proper size and fill in the colors
-		extruderColor = make([]string, maxIndex+1)
-		for index, color := range extruderColorMap {
-			extruderColor[index] = color
-		}
-		
-		// Remove trailing empty strings if any
-		for len(extruderColor) > 0 && extruderColor[len(extruderColor)-1] == "" {
-			extruderColor = extruderColor[:len(extruderColor)-1]
+		if len(filamentUsed) > 0 && printerModel != "" && len(extruderColor) > 0 {
+			break
 		}
 	}
 
@@ -201,14 +172,10 @@ func main() {
 		log.Println("Filament used extraction failed")
 		return
 	}
-	
-	if len(extruderColor) == 0 {
-		log.Println("Warning: No extruder colors found")
-	}
-	
 	log.Println("Filament used:", filamentUsed)
 	log.Println("Printer model:", printerModel)
-	log.Println("Extruder colors:", extruderColor)
+	//fmt.Printf("Filament used: %v\n", filamentUsed)
+	//fmt.Printf("Printer model: %v\n", printerModel)
 
 	// Build JSON
 	payload := FilamentPayload{
