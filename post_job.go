@@ -104,6 +104,7 @@ func main() {
 		//fmt.Println(lower)
 		if strings.HasPrefix(lower, "filament used [g]") {
 			// check prefix for `filament used [g]`
+			log.Print(line)
 			weightsStr, err := splitPrefix(lower)
 			if err != nil {
 				log.Println("Error parsing filament used [g]:", err)
@@ -125,17 +126,20 @@ func main() {
 
 				f, err := strToFloat(weight)
 				if err != nil {
-					log.Printf("Filament used extraction failed, %v\n", err)
+					log.Printf("Filament used extraction failed 2, %v\n", err)
 					return
 				}
 				filamentUsed = append(filamentUsed, f)
 			}
 		}
+		if strings.HasPrefix(lower, "filament"){
+			log.Print(line)
+		}
 
 		if strings.HasPrefix(lower, "printer_model") {
 			printerModel, err = splitPrefix(lower)
 			if err != nil {
-				log.Printf("Filament used extraction failed, %v\n", err)
+				log.Printf("Printer model extraction failed, %v\n", err)
 			}
 			printerModel = strings.ToUpper(printerModel)
 		}
@@ -156,13 +160,13 @@ func main() {
 			}
 		}
 
-		if len(filamentUsed) > 0 && printerModel != "" && (printerModel == "XL5" && len(extruderColor) == 5) || (printerModel != "XL5" && len(extruderColor) == 1) {
-			break
-		}
+		// if len(filamentUsed) > 0 && printerModel != "" && (printerModel == "XL5" && len(extruderColor) == 5) || (printerModel != "XL5" && len(extruderColor) == 1) {
+		// 	break
+		// }
 	}
 
 	if len(filamentUsed) == 0 {
-		log.Println("Filament used extraction failed")
+		log.Println("Filament used extraction failed, length 0")
 		return
 	}
 	log.Println("Filament used:", filamentUsed)

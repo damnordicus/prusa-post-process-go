@@ -81,3 +81,193 @@
 2025/07/02 09:40:54 Printer model: MK3S
 2025/07/02 09:40:54 {"filename":".","filament_used":[2],"printer_model":"MK3S","extruder_colour":["#0000ff"]}
 2025/07/02 09:40:54 Response Status: 200 OK
+2025/07/02 10:02:10 Reading Temp file
+2025/07/02 10:02:10 Output file: .
+2025/07/02 10:02:10 Error opening file: open 373.gcode: no such file or directory
+2025/07/02 10:03:07 Reading Temp file
+2025/07/02 10:03:07 Output file: .
+2025/07/02 10:03:07 Error opening file: open 373.gcode: no such file or directory
+2025/07/02 10:03:18 Reading Temp file
+2025/07/02 10:03:18 Output file: .
+2025/07/02 10:03:18 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:03:18 Filament used extraction failed
+2025/07/02 10:04:12 Reading Temp file
+2025/07/02 10:04:12 Output file: .
+2025/07/02 10:04:12 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:04:12 Filament used extraction failed
+2025/07/02 10:05:42 Reading Temp file
+2025/07/02 10:05:42 Output file: .
+2025/07/02 10:05:42 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:05:42 Filament used extraction failed
+2025/07/02 10:06:20 Reading Temp file
+2025/07/02 10:06:20 Output file: .
+2025/07/02 10:06:20 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:06:20 Filament used extraction failed
+2025/07/02 10:06:56 Reading Temp file
+2025/07/02 10:06:56 Output file: .
+2025/07/02 10:06:56 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:06:56 Filament used extraction failed, length 0
+2025/07/02 10:08:42 Reading Temp file
+2025/07/02 10:08:42 Output file: .
+2025/07/02 10:08:42 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:08:42 Filament used extraction failed, length 0
+2025/07/02 10:09:58 Reading Temp file
+2025/07/02 10:09:58 Output file: .
+2025/07/02 10:09:58 filament_type=PLA;PLA;PLA;PLA;PLA
+2025/07/02 10:09:58 filament_abrasive=0,0,0,0,0
+2025/07/02 10:09:58 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:09:58 Filament used extraction failed, length 0
+2025/07/02 10:12:04 Reading Temp file
+2025/07/02 10:12:04 Output file: .
+2025/07/02 10:12:04 filament_type=PLA;PLA;PLA;PLA;PLA
+2025/07/02 10:12:04 filament_abrasive=0,0,0,0,0
+2025/07/02 10:12:04 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:12:04 filament used [mm]=60294.78, 15872.00, 27471.78, 0.00, 0.00
+2025/07/02 10:12:04 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:12:04 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:12:04 filament cost=4.57, 1.20, 2.08, 0.00, 0.00
+2025/07/02 10:12:04 filament used [cm3]=145.03, 38.18, 66.08, 0.00, 0.00
+2025/07/02 10:12:04 Filament used: [179.83 47.34 81.94 0 0]
+2025/07/02 10:12:04 Printer model: 
+2025/07/02 10:12:04 {"filename":".","filament_used":[179.83,47.34,81.94,0,0],"printer_model":"","extruder_colour":["#ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00"]}
+2025/07/02 10:12:04 Response Status: 200 OK
+2025/07/02 10:31:13 Reading Temp file
+2025/07/02 10:31:13 Output file: .
+2025/07/02 10:31:13 filament_type=PLA;PLA;PLA;PLA;PLA
+2025/07/02 10:31:13 filament_abrasive=0,0,0,0,0
+2025/07/02 10:31:13 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:31:13 filament used [mm]=60294.78, 15872.00, 27471.78, 0.00, 0.00
+2025/07/02 10:31:13 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:31:13 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:31:13 filament cost=4.57, 1.20, 2.08, 0.00, 0.00
+2025/07/02 10:31:13 filament used [cm3]=145.03, 38.18, 66.08, 0.00, 0.00
+2025/07/02 10:31:13 Filament used: [179.83 47.34 81.94 0 0]
+2025/07/02 10:31:13 Printer model: 
+2025/07/02 10:31:13 {"filename":".","filament_used":[179.83,47.34,81.94,0,0],"printer_model":"","extruder_colour":["#ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00"]}
+2025/07/02 10:31:13 Response Status: 500 Internal Server Error
+2025/07/02 10:32:24 Reading Temp file
+2025/07/02 10:32:24 Output file: .
+2025/07/02 10:32:24 filament_type=PLA;PLA;PLA;PLA;PLA
+2025/07/02 10:32:24 filament_abrasive=0,0,0,0,0
+2025/07/02 10:32:24 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:32:24 filament used [mm]=60294.78, 15872.00, 27471.78, 0.00, 0.00
+2025/07/02 10:32:24 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:32:24 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:32:24 filament cost=4.57, 1.20, 2.08, 0.00, 0.00
+2025/07/02 10:32:24 filament used [cm3]=145.03, 38.18, 66.08, 0.00, 0.00
+2025/07/02 10:32:24 Filament used: [179.83 47.34 81.94 0 0]
+2025/07/02 10:32:24 Printer model: 
+2025/07/02 10:32:24 {"filename":".","filament_used":[179.83,47.34,81.94,0,0],"printer_model":"","extruder_colour":["#ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00"]}
+2025/07/02 10:32:24 Response Status: 500 Internal Server Error
+2025/07/02 10:33:42 Reading Temp file
+2025/07/02 10:33:42 Output file: .
+2025/07/02 10:33:42 filament_type=PLA;PLA;PLA;PLA;PLA
+2025/07/02 10:33:42 filament_abrasive=0,0,0,0,0
+2025/07/02 10:33:42 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:33:42 filament used [mm]=60294.78, 15872.00, 27471.78, 0.00, 0.00
+2025/07/02 10:33:42 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:33:42 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:33:42 filament cost=4.57, 1.20, 2.08, 0.00, 0.00
+2025/07/02 10:33:42 filament used [cm3]=145.03, 38.18, 66.08, 0.00, 0.00
+2025/07/02 10:33:42 Filament used: [179.83 47.34 81.94 0 0]
+2025/07/02 10:33:42 Printer model: 
+2025/07/02 10:33:42 {"filename":".","filament_used":[179.83,47.34,81.94,0,0],"printer_model":"","extruder_colour":["#ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00"]}
+2025/07/02 10:33:42 Response Status: 200 OK
+2025/07/02 10:34:07 Reading Temp file
+2025/07/02 10:34:07 Output file: .
+2025/07/02 10:34:07 filament_type=PLA;PLA;PLA;PLA;PLA
+2025/07/02 10:34:07 filament_abrasive=0,0,0,0,0
+2025/07/02 10:34:07 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:34:07 filament used [mm]=60294.78, 15872.00, 27471.78, 0.00, 0.00
+2025/07/02 10:34:07 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:34:07 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:34:07 filament cost=4.57, 1.20, 2.08, 0.00, 0.00
+2025/07/02 10:34:07 filament used [cm3]=145.03, 38.18, 66.08, 0.00, 0.00
+2025/07/02 10:34:07 Filament used: [179.83 47.34 81.94 0 0]
+2025/07/02 10:34:07 Printer model: 
+2025/07/02 10:34:07 {"filename":".","filament_used":[179.83,47.34,81.94,0,0],"printer_model":"","extruder_colour":["#ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00"]}
+2025/07/02 10:34:08 Response Status: 200 OK
+2025/07/02 10:34:28 Reading Temp file
+2025/07/02 10:34:28 Output file: .
+2025/07/02 10:34:28 filament_type=PLA;PLA;PLA;PLA;PLA
+2025/07/02 10:34:28 filament_abrasive=0,0,0,0,0
+2025/07/02 10:34:28 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:34:28 filament used [mm]=60294.78, 15872.00, 27471.78, 0.00, 0.00
+2025/07/02 10:34:28 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:34:28 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:34:28 filament cost=4.57, 1.20, 2.08, 0.00, 0.00
+2025/07/02 10:34:28 filament used [cm3]=145.03, 38.18, 66.08, 0.00, 0.00
+2025/07/02 10:34:28 Filament used: [179.83 47.34 81.94 0 0]
+2025/07/02 10:34:28 Printer model: 
+2025/07/02 10:34:28 {"filename":".","filament_used":[179.83,47.34,81.94,0,0],"printer_model":"","extruder_colour":["#ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00"]}
+2025/07/02 10:34:28 Response Status: 200 OK
+2025/07/02 10:35:18 Reading Temp file
+2025/07/02 10:35:18 Output file: .
+2025/07/02 10:35:18 filament_type=PLA;PLA;PLA;PLA;PLA
+2025/07/02 10:35:18 filament_abrasive=0,0,0,0,0
+2025/07/02 10:35:18 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:35:18 filament used [mm]=60294.78, 15872.00, 27471.78, 0.00, 0.00
+2025/07/02 10:35:18 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:35:18 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:35:18 filament cost=4.57, 1.20, 2.08, 0.00, 0.00
+2025/07/02 10:35:18 filament used [cm3]=145.03, 38.18, 66.08, 0.00, 0.00
+2025/07/02 10:35:18 Filament used: [179.83 47.34 81.94 0 0]
+2025/07/02 10:35:18 Printer model: 
+2025/07/02 10:35:18 {"filename":".","filament_used":[179.83,47.34,81.94,0,0],"printer_model":"","extruder_colour":["#ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00"]}
+2025/07/02 10:35:18 Response Status: 200 OK
+2025/07/02 10:52:15 Reading Temp file
+2025/07/02 10:52:15 Output file: .
+2025/07/02 10:52:15 filament_type=PLA;PLA;PLA;PLA;PLA
+2025/07/02 10:52:15 filament_abrasive=0,0,0,0,0
+2025/07/02 10:52:15 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:52:15 filament used [mm]=60294.78, 15872.00, 27471.78, 0.00, 0.00
+2025/07/02 10:52:15 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:52:15 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:52:15 filament cost=4.57, 1.20, 2.08, 0.00, 0.00
+2025/07/02 10:52:15 filament used [cm3]=145.03, 38.18, 66.08, 0.00, 0.00
+2025/07/02 10:52:15 Filament used: [179.83 47.34 81.94 0 0]
+2025/07/02 10:52:15 Printer model: 
+2025/07/02 10:52:15 {"filename":".","filament_used":[179.83,47.34,81.94,0,0],"printer_model":"","extruder_colour":["#ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00"]}
+2025/07/02 10:52:15 Response Status: 200 OK
+2025/07/02 10:52:59 Reading Temp file
+2025/07/02 10:52:59 Output file: .
+2025/07/02 10:52:59 filament_type=PLA;PLA;PLA;PLA;PLA
+2025/07/02 10:52:59 filament_abrasive=0,0,0,0,0
+2025/07/02 10:52:59 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:52:59 filament used [mm]=60294.78, 15872.00, 27471.78, 0.00, 0.00
+2025/07/02 10:52:59 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:52:59 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:52:59 filament cost=4.57, 1.20, 2.08, 0.00, 0.00
+2025/07/02 10:52:59 filament used [cm3]=145.03, 38.18, 66.08, 0.00, 0.00
+2025/07/02 10:52:59 Filament used: [179.83 47.34 81.94 0 0]
+2025/07/02 10:52:59 Printer model: 
+2025/07/02 10:52:59 {"filename":".","filament_used":[179.83,47.34,81.94,0,0],"printer_model":"","extruder_colour":["#ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00"]}
+2025/07/02 10:53:01 Response Status: 200 OK
+2025/07/02 10:53:24 Reading Temp file
+2025/07/02 10:53:24 Output file: .
+2025/07/02 10:53:24 filament_type=PLA;PLA;PLA;PLA;PLA
+2025/07/02 10:53:24 filament_abrasive=0,0,0,0,0
+2025/07/02 10:53:24 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:53:24 filament used [mm]=60294.78, 15872.00, 27471.78, 0.00, 0.00
+2025/07/02 10:53:24 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:53:24 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:53:24 filament cost=4.57, 1.20, 2.08, 0.00, 0.00
+2025/07/02 10:53:24 filament used [cm3]=145.03, 38.18, 66.08, 0.00, 0.00
+2025/07/02 10:53:24 Filament used: [179.83 47.34 81.94 0 0]
+2025/07/02 10:53:24 Printer model: 
+2025/07/02 10:53:24 {"filename":".","filament_used":[179.83,47.34,81.94,0,0],"printer_model":"","extruder_colour":["#ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00"]}
+2025/07/02 10:53:24 Response Status: 200 OK
+2025/07/02 10:53:54 Reading Temp file
+2025/07/02 10:53:54 Output file: .
+2025/07/02 10:53:54 filament_type=PLA;PLA;PLA;PLA;PLA
+2025/07/02 10:53:54 filament_abrasive=0,0,0,0,0
+2025/07/02 10:53:54 color: #ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00
+2025/07/02 10:53:54 filament used [mm]=60294.78, 15872.00, 27471.78, 0.00, 0.00
+2025/07/02 10:53:54 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:53:54 filament used [g]=179.83, 47.34, 81.94, 0.00, 0.00
+2025/07/02 10:53:54 filament cost=4.57, 1.20, 2.08, 0.00, 0.00
+2025/07/02 10:53:54 filament used [cm3]=145.03, 38.18, 66.08, 0.00, 0.00
+2025/07/02 10:53:55 Filament used: [179.83 47.34 81.94 0 0]
+2025/07/02 10:53:55 Printer model: 
+2025/07/02 10:53:55 {"filename":".","filament_used":[179.83,47.34,81.94,0,0],"printer_model":"","extruder_colour":["#ff8000;#c0c0c0;#0000ff;#ffff00;#ffff00"]}
+2025/07/02 10:53:55 Response Status: 200 OK
