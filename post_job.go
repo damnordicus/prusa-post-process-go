@@ -156,7 +156,7 @@ func main() {
 			}
 		}
 
-		if len(filamentUsed) > 0 && printerModel != "" && len(extruderColor) > 0 {
+		if len(filamentUsed) > 0 && printerModel != "" && (printerModel == "XL5" && len(extruderColor) == 5) || (printerModel != "XL5" && len(extruderColor) == 1) {
 			break
 		}
 	}
@@ -186,7 +186,7 @@ func main() {
 	log.Println(string(jsonData))
 
 	// POST request
-	resp, err := http.Post("https://filmanager.apps.travisspark.com/api/pending", "application/json", bytes.NewBuffer(jsonData))
+	resp, err := http.Post("http://10.0.30.204:5173/api/pending", "application/json", bytes.NewBuffer(jsonData))
 	if err != nil {
 		log.Println("Error sending POST:", err)
 		return

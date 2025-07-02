@@ -27,3 +27,57 @@
 2025/06/26 12:56:52 Printer model: XL5
 2025/06/26 12:56:52 {"filename":".","filament_used":[2,1,0,0,0],"printer_model":"XL5","extruder_colour":["#0000ff","#ff0000","#f0f0f0","#2351f2","#000000"]}
 2025/06/26 12:56:52 Error sending POST: Post "https://10.0.30.204:5173/api/pendingJob": dial tcp 10.0.30.204:5173: connect: connection refused
+2025/07/02 09:13:02 Reading Temp file
+2025/07/02 09:13:02 Output file: .
+2025/07/02 09:13:02 color: #0000ff
+2025/07/02 09:13:02 Filament used: [2 1 0 0 0]
+2025/07/02 09:13:02 Printer model: XL5
+2025/07/02 09:13:02 {"filename":".","filament_used":[2,1,0,0,0],"printer_model":"XL5","extruder_colour":["#0000ff"]}
+2025/07/02 09:13:17 Error sending POST: Post "https://filmanager.apps.travisspark.com/api/pending": dial tcp 10.0.30.45:443: connect: no route to host
+2025/07/02 09:19:23 Reading Temp file
+2025/07/02 09:19:23 Output file: .
+2025/07/02 09:19:23 color: #0000ff
+2025/07/02 09:19:23 color: #ff0000
+2025/07/02 09:19:23 color: #f0f0f0
+2025/07/02 09:19:23 color: #2351f2
+2025/07/02 09:19:23 color: #000000
+2025/07/02 09:19:23 Filament used: [2 1 0 0 0]
+2025/07/02 09:19:23 Printer model: XL5
+2025/07/02 09:19:23 {"filename":".","filament_used":[2,1,0,0,0],"printer_model":"XL5","extruder_colour":["#0000ff","#ff0000","#f0f0f0","#2351f2","#000000"]}
+2025/07/02 09:19:27 Error sending POST: Post "https://filmanager.apps.travisspark.com/api/pending": dial tcp 10.0.30.45:443: connect: no route to host
+2025/07/02 09:36:19 Reading Temp file
+2025/07/02 09:36:19 Output file: .
+2025/07/02 09:36:19 color: #0000ff
+2025/07/02 09:36:19 color: #ff0000
+2025/07/02 09:36:19 color: #f0f0f0
+2025/07/02 09:36:19 color: #2351f2
+2025/07/02 09:36:19 color: #000000
+2025/07/02 09:36:19 Filament used: [2 1 0 0 0]
+2025/07/02 09:36:19 Printer model: XL5
+2025/07/02 09:36:19 {"filename":".","filament_used":[2,1,0,0,0],"printer_model":"XL5","extruder_colour":["#0000ff","#ff0000","#f0f0f0","#2351f2","#000000"]}
+2025/07/02 09:36:19 Error sending POST: Post "https://10.0.30.204:5173/api/pending": http: server gave HTTP response to HTTPS client
+2025/07/02 09:37:51 Reading Temp file
+2025/07/02 09:37:51 Output file: .
+2025/07/02 09:37:51 color: #0000ff
+2025/07/02 09:37:51 color: #ff0000
+2025/07/02 09:37:51 color: #f0f0f0
+2025/07/02 09:37:51 color: #2351f2
+2025/07/02 09:37:51 color: #000000
+2025/07/02 09:37:51 Filament used: [2 1 0 0 0]
+2025/07/02 09:37:51 Printer model: XL5
+2025/07/02 09:37:51 {"filename":".","filament_used":[2,1,0,0,0],"printer_model":"XL5","extruder_colour":["#0000ff","#ff0000","#f0f0f0","#2351f2","#000000"]}
+2025/07/02 09:37:51 Response Status: 200 OK
+2025/07/02 09:40:07 Reading Temp file
+2025/07/02 09:40:07 Output file: .
+2025/07/02 09:40:07 color: #0000ff
+2025/07/02 09:40:07 Filament used: [2 1 0 0 0]
+2025/07/02 09:40:07 Printer model: MK3S
+2025/07/02 09:40:07 {"filename":".","filament_used":[2,1,0,0,0],"printer_model":"MK3S","extruder_colour":["#0000ff"]}
+2025/07/02 09:40:07 Response Status: 200 OK
+2025/07/02 09:40:54 Reading Temp file
+2025/07/02 09:40:54 Output file: .
+2025/07/02 09:40:54 color: #0000ff
+2025/07/02 09:40:54 Filament used: [2]
+2025/07/02 09:40:54 Printer model: MK3S
+2025/07/02 09:40:54 {"filename":".","filament_used":[2],"printer_model":"MK3S","extruder_colour":["#0000ff"]}
+2025/07/02 09:40:54 Response Status: 200 OK
